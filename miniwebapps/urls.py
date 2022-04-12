@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('qrCode/', include("qrCode.urls")),
-    path('regextool/', include("regextool.urls"))
+    path('regextool/', include("regextool.urls")),
+    path("urlShortener/", include("urlShortener.urls"))
 ]
