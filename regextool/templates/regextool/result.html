@@ -31,11 +31,33 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
        
             <br>
             <div class="mb-3">
-                <span class="input-group-text" id="addon-wrapping">Result:</span>
-          {% for i in result%}
-          <textarea class="form-control"  rows="1" disabled>{{i}}</textarea>
-            {%endfor%}
+                <span class="input-group-text" id="addon-wrapping">Highlighted Results in text:</span>
+                <p class="form-control" >
+                {% for i in text%}
+                {%if i in result%}
+                <b>{{i}}</b>
+                {%else%}
+                {{i}}
+                {%endif%}
+                {%endfor%}
+                </p>
+      
+        
         </div>
+        <div class="mb-3">
+            <span class="input-group-text" id="addon-wrapping">Sole Results:</span>
+ 
+            
+            {%for i in result%}
+            <p class="form-control" >
+         {{i}}
+        </p>
+            {%endfor%}
+     
+          
+  
+    
+    </div>
     </form>
         <br>
 
