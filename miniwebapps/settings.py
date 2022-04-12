@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'urlShortener',
     'regextool',
     'qrCode',
     'django.contrib.admin',
