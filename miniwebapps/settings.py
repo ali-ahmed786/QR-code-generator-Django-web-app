@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'regextool',
     'qrCode',
     'django.contrib.admin',
     'django.contrib.auth',

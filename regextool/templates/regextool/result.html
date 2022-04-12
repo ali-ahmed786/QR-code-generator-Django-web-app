@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>Regex Tool</title>
+        <style>
+            body{
+                background-size: cover;
+                background-color: #F4D03F;
+background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+ }
+         
+            form{
+                background-color: rgba(38, 36, 36, 0.5);
+                 width:80%;
+                 margin:auto;
+                 padding:10%;
+                 border-radius: 6px;
+             
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <br>
+
+       <form>
+    
+            <h2>Result</h2>
+       
+            <br>
+            <div class="mb-3">
+                <span class="input-group-text" id="addon-wrapping">Result:</span>
+          {% for i in result%}
+          <textarea class="form-control"  rows="1" disabled>{{i}}</textarea>
+            {%endfor%}
+        </div>
+    </form>
+        <br>
+
+  
+        <br>
+
+    </body>
+</html>
