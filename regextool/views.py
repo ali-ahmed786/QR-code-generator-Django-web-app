@@ -1,3 +1,4 @@
+from shutil import register_unpack_format
 from django.shortcuts import render
 from django.http import HttpResponse
 import re
@@ -8,9 +9,13 @@ def regCheck(request):
     text= request.POST.get('textInput')
     regex= request.POST.get('regexInput')
     result=re.findall(regex, text)
+    newResult= list( dict.fromkeys(result) )
     resultpos=re.search(regex, text)
+    
+   
     return render(request, "regextool/result.html", {
-        "result": result
+        "text": text.split(),
+        "result": newResult
         
-
+    
     })
