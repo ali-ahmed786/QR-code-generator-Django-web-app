@@ -6,16 +6,19 @@ import re
 def index(request):
     return render(request, "regextool/index.html")
 def regCheck(request):
-    text= request.POST.get('textInput')
-    regex= request.POST.get('regexInput')
+    text= request.POST.get('textInput')+''
+    regex= r''+request.POST.get('regexInput')+''
     result=re.findall(regex, text)
     newResult= list( dict.fromkeys(result) )
+    if len(newResult)==0:
+        text="No matching patterns found!!"
     resultpos=re.search(regex, text)
     
    
     return render(request, "regextool/result.html", {
         "text": text.split(),
-        "result": newResult
+        "result": newResult,
+        "regin": regex
         
     
     })

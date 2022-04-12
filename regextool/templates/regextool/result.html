@@ -40,6 +40,7 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
                 {{i}}
                 {%endif%}
                 {%endfor%}
+            
                 </p>
       
         
@@ -49,9 +50,9 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
  
             
             {%for i in result%}
-            <p class="form-control" >
+            <label class="form-control" disabled>
          {{i}}
-        </p>
+            </label>
             {%endfor%}
      
           
@@ -61,7 +62,6 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
     </form>
         <br>
 
-  
         <br>
 
     </body>
