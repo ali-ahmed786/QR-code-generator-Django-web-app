@@ -17,7 +17,6 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
                  margin:auto;
                  padding:5%;
                  border-radius: 6px;
-             
             }
         </style>
     </head>
@@ -27,6 +26,7 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
 
        
         <form  action={% url 'regCheck' %} method="POST">
+            <h2 id="errorMessage">{{text}}</h2>
             <h2>Regex tool</h2>
             <h5> Enter your text and regular expression to get started.</h5>
             {% csrf_token %}
@@ -36,13 +36,14 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
            <textarea class="form-control" name="textInput"id="textInput" placeholder="Paste your text here!"  rows="5" required></textarea>
         </div>
         <br>
-        <div class="input-group flex-nowrap">
+        <div class="mb-3">
             <span class="input-group-text" id="addon-wrapping">Regex: </span>
-           <input type="text" class="form-control" name="regexInput"id="regexInput" placeholder="Enter your regular expression here! " required>
+           <textarea class="form-control" name="regexInput"id="regexInput" placeholder="Enter your regular expression here! " required></textarea>
         </div>
         <br>
         <button type="submit" class="btn btn-primary btn-lg" >Check</button>
         </form>
+        
         <br>
 
     </body>

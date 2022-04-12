@@ -8,17 +8,21 @@ def index(request):
 def regCheck(request):
     text= request.POST.get('textInput')+''
     regex= r''+request.POST.get('regexInput')+''
-    result=re.findall(regex, text)
-    newResult= list( dict.fromkeys(result) )
-    if len(newResult)==0:
-        text="No matching patterns found!!"
-    resultpos=re.search(regex, text)
-    
-   
-    return render(request, "regextool/result.html", {
+    try:
+        re.compile(regex)
+        result=re.findall(regex, text)
+        newResult= list( dict.fromkeys(result) )
+        if len(newResult)==0:
+            text="No matching patterns found!!"
+        resultpos=re.search(regex, text)
+        return render(request, "regextool/result.html", {
         "text": text.split(),
         "result": newResult,
         "regin": regex
-        
-    
     })
+    except:
+         return render(request, "regextool/index.html", {
+        "text": "Please enter a valid regular expression!",
+ 
+    })
+
