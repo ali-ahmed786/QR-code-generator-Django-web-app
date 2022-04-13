@@ -4,3 +4,4 @@ This currently includes the following:
 QR Code maker
 Regular Expression enquiry tool
 URL Shortener
+Password Generator
