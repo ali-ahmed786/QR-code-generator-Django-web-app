@@ -11,7 +11,7 @@
 background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
  }
          
-            form{
+          #screenBlock{
                 background-color: rgba(38, 36, 36, 0.5);
                  width:80%;
                  margin:auto;
@@ -23,27 +23,27 @@ background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
     <body>
         <br>
         <br>
-
-       
+<div id="screenBlock">
+        <h2 id="errorMessage">{{text}}</h2>
         <form  action={% url 'regCheck' %} method="POST">
-            <h2 id="errorMessage">{{text}}</h2>
+            
             <h2>Regex tool</h2>
             <h5> Enter your text and regular expression to get started.</h5>
             {% csrf_token %}
             <br>
             <div class="mb-3">
                 <span class="input-group-text" id="addon-wrapping">Text:</span>
-           <textarea class="form-control" name="textInput"id="textInput" placeholder="Paste your text here!"  rows="5" required></textarea>
+           <textarea class="form-control" name="textInput"id="textInput" placeholder="Paste your text here!"  rows="4" required></textarea>
         </div>
-        <br>
+
         <div class="mb-3">
             <span class="input-group-text" id="addon-wrapping">Regex: </span>
            <textarea class="form-control" name="regexInput"id="regexInput" placeholder="Enter your regular expression here! " required></textarea>
         </div>
-        <br>
+       
         <button type="submit" class="btn btn-primary btn-lg" >Check</button>
         </form>
-        
+    </div>
         <br>
 
     </body>
