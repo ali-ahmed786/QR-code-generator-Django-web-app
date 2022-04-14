@@ -11,7 +11,7 @@
         <br>
 
         <div id="screenBlock">
-        <form action="{%url 'shortenUrl' %}" method="POST">
+        <form action="{%url 'urlShortener:shortenUrl' %}" method="POST">
             <h2>URL Shortener</h2>
             <p> Enter your url below to get started.</p>
             {% csrf_token %}

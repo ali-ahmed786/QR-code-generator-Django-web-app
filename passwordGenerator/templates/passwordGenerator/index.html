@@ -27,7 +27,7 @@
         <br>
 
        <div id="screenBlock">
-        <form action="{% url 'generatePassword' %}" method="POST">
+        <form action="{% url 'passwordGenerator:generatePassword' %}" method="POST">
             <h2> Password Generator</h2>
             <p> Press the button below to generate a strong password.</p>
             {% csrf_token %}

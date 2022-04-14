@@ -12,7 +12,7 @@
         <br>
 
        
-        <form action="{% url 'generateQR' %}" method="POST">
+        <form action="{% url 'qrCode:generateQR' %}" method="POST">
             <h2> QR CODE Generator</h2>
             <p> Enter your url below to get started.</p>
             {% csrf_token %}
